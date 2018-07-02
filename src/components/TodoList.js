@@ -4,15 +4,20 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import TodoListItem from './TodoListItem';
-import { toggleTodo } from '../actions';
+import { toggleTodo, setEditingTodo } from '../actions';
 
-const TodoList = ({todos, dispatchToggleTodo}) => (
+const TodoList = ({
+  todos,
+  dispatchToggleTodo,
+  dispatchSetEditingTodo
+}) => (
   <View>
     {todos.map(todo => (
       <TodoListItem 
         key={todo.id} 
         todo={todo} 
         onPressTodo={() => dispatchToggleTodo(todo.id)}
+        onLongPressTodo={() => dispatchSetEditingTodo(todo)}
       />
     ))}
   </View>
@@ -24,7 +29,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = { 
-  dispatchToggleTodo: toggleTodo 
+  dispatchToggleTodo: toggleTodo,
+  dispatchSetEditingTodo: setEditingTodo
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
