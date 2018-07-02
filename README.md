@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
+This is a project example listing tasks which was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app). 
+It is possible to create and edit tasks. There is an option to change the CSS of the lines just clicking and holding an item.
+In this project, i integrated React and Redux, created some reducers and dispatch actions to create and update tasks.
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
 
